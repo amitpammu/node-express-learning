@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res, next) => {
 
     res.render('home', {
-        msg: "Welcome to the express",
+        msg: "Welcome to the express framework for NodeJS",
         pageTitle: "Home",
 
 
