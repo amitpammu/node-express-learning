@@ -8,7 +8,7 @@ hbs.registerPartials(__dirname + "/views/partials");
 
 //template engine
 app.set('view engine', 'hbs');
-// app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 
 //helpers
 hbs.registerHelper('getCurrentYear', () => {
@@ -30,6 +30,7 @@ app.use((req, res, next) => {
     next();
 });
 
+//routes
 app.get('/', (req, res, next) => {
 
     res.render('home', {
@@ -50,6 +51,13 @@ app.get('/bad', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         pageTitle: "About",
+
+    });
+});
+app.get('/projects', (req, res) => {
+    res.render('projects', {
+        pageTitle: "Portfolio",
+        msg:"My portfolio page"
 
     });
 });
